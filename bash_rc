@@ -1,0 +1,4 @@
+export HISTTIMEFORMAT="%d/%m/%y %T "
+alias scr='script scriptlog_`date +"%Y-%m-%d_%T"`' 
+smart_script
+
