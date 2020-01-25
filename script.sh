@@ -6,6 +6,9 @@ echo "smart_script" >> ~/.bashrc
 cp ./bash_aliases ~/.bash_aliases
 echo "[*] History and script in ~/.bashrc set."
 
+cp -v ./tmux.conf ~/.tmux.conf
+echo "[*] Tmux conf copied" 
+
 gsettings set org.gnome.mutter dynamic-workspaces false
 
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
