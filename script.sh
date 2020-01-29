@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "export HISTTIMEFORMAT=\"%d/%m/%y %T \"" >> ~/.bashrc
+echo "alias exit=savelog; exit"
 echo "alias scr='script scriptlog_`date +\"%Y-%m-%d_%T\"`'" >> ~/.bashrc 
 echo "smart_script" >> ~/.bashrc
 cp ./bash_aliases ~/.bash_aliases
