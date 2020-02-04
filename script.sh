@@ -8,7 +8,10 @@ cp ./bash_aliases ~/.bash_aliases
 echo "[*] History and script in ~/.bashrc set."
 
 cp -v ./tmux.conf ~/.tmux.conf
-echo "[*] Tmux conf copied" 
+echo "[*] Tmux conf copied"
+mkdir -p ~/.config/terminator/
+cp -v ./terminator.rc ~/.config/terminator/config
+echo "[*] Terminator settings restored"
 
 gsettings set org.gnome.mutter dynamic-workspaces false
 
@@ -30,5 +33,14 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-last "['<Primar
 
 echo "[*] Shortcuts alt and ctrl set."
 
-apt update && apt -y install terminator vim tmux glances golang
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "'nothing'"
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type "'nothing'"
+echo "[*] Automatic suspend disabled."
+
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click "true"
+echo "[*] Tap to click on touchpad set."
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed "false"
+echo "[*] Autohide for dock enabled."
+
+apt update && apt -y install terminator vim tmux glances git
 echo "[*] Stuff installed"
