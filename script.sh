@@ -11,10 +11,11 @@ cp -v ./tmux.conf ~/.tmux.conf
 echo "[*] Tmux conf copied" 
 
 gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.mutter workspaces-on-on-primary false
 
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
 
-echo "5 workspaces set."
+echo "5 workspaces set, on both screens."
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Alt>1']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Alt>2']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Alt>3']"
