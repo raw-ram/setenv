@@ -14,7 +14,7 @@ cp -v ./terminator.rc ~/.config/terminator/config
 echo "[*] Terminator settings restored"
 
 gsettings set org.gnome.mutter dynamic-workspaces false
-gsettings set org.gnome.mutter workspaces-on-on-primary false
+gsettings set org.gnome.mutter workspaces-only-on-primary false
 
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
 
