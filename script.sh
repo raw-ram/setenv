@@ -1,11 +1,10 @@
 #!/bin/bash
 
-echo "export HISTTIMEFORMAT=\"%d/%m/%y %T \"" >> ~/.bashrc
-echo "alias exit=savelog; exit"
-echo "alias scr='script scriptlog_`date +\"%Y-%m-%d_%T\"`'" >> ~/.bashrc 
-echo "smart_script" >> ~/.bashrc
 cp ./bash_aliases ~/.bash_aliases
 echo "[*] History and script in ~/.bashrc set."
+
+#UPDATE ~/.bash_history instantly
+echo 'PROMPT_COMMAND="history -a"' >> ~/.profile
 
 mkdir -p ~/.config/terminator/
 cp -v ./terminator.rc ~/.config/terminator/config
@@ -24,4 +23,10 @@ apt update
 apt -y install terminator vim
 apt -y install glances #monitoring tool
 apt -y install brasero #4 burning cds
+
+git clone https://github.com/danielmiessler/SecLists.git /opt/
+git clone https://github.com/SecureAuthCorp/impacket.git /opt/
+git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git /opt/
+wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32 -O /opt/
+wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64 -O /opt/
 echo "[*] Stuff installed"
