@@ -1,14 +1,12 @@
 #!/bin/bash
 
-cp ./bash_aliases ~/.bash_aliases
-echo "[*] History and script in ~/.bashrc set."
-
 #UPDATE ~/.bash_history instantly
 echo 'PROMPT_COMMAND="history -a"' >> ~/.profile
+echo "[*] History set."
 
 mkdir -p ~/.config/terminator/
 cp -v ./terminator.rc ~/.config/terminator/config
-echo "[*] Terminator settings restored"
+echo "[*] Terminator settings set"
 
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "'nothing'"
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type "'nothing'"
@@ -29,4 +27,5 @@ git clone https://github.com/SecureAuthCorp/impacket.git /opt/
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git /opt/
 wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32 -O /opt/
 wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64 -O /opt/
+
 echo "[*] Stuff installed"
