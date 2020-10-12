@@ -17,6 +17,10 @@ echo "[*] Tap to click on touchpad set."
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed "false"
 echo "[*] Autohide for dock enabled."
 
+echo "[*] Changing shell..."
+chsh -s /bin/zsh
+cp /etc/skel/.zshrc ~/
+
 apt update
 apt -y install terminator vim
 apt -y install glances #monitoring tool
